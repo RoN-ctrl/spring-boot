@@ -1,5 +1,7 @@
-package com.learn.task1.task1;
+package com.learn.task1;
 
+import com.learn.task1.service.TextService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,12 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Task1Application implements CommandLineRunner {
 
+	@Autowired
+	TextService textService;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Task1Application.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println("Hello world!");
+		System.out.println(textService.printHelloWorld());
 	}
 }
