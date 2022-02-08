@@ -1,0 +1,7 @@
+spring:
+  jpa:
+    ddl-auto: create
+    show-sql: true
+jwt:
+  sessionTime: 120000000
+  secret: secret_key
