@@ -4,7 +4,9 @@ import com.learn.task3.exception.AccountNotFoundException;
 import com.learn.task3.model.Account;
 import com.learn.task3.repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AccountService {
 
   @Autowired
