@@ -5,3 +5,34 @@ spring:
 jwt:
   sessionTime: 120000000
   secret: secret_key
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: My Custom Spring Boot Application
+    description: This application has jwt authentication
+    owner:
+      company: RB corp.
+      headquarters: Lviv
+  build:
+    groupId: @project.groupId@
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+  env:
+    java:
+      vendor: ${java.specification.vendor}
+      vm-name: ${java.vm.name}
+      runtime-version: ${java.runtime.version}
