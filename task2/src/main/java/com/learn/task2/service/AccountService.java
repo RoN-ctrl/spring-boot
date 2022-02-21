@@ -1,14 +1,15 @@
 package com.learn.task2.service;
 
 import com.learn.task2.model.Account;
+import com.learn.task2.model.AccountDto;
 
 public interface AccountService {
 
-  Account saveAccount(String name, int age);
+  Account saveAccount(AccountDto accountDto);
 
   Account getAccountById(long id);
 
-  Account updateAccount(long id, String newName, int newAge);
+  Account updateAccount(AccountDto accountDto);
 
   boolean deleteAccountById(long id);
 
