@@ -29,7 +29,7 @@ class AccountServiceImplTest {
     assertEquals("TestName", account.getName());
     assertEquals(28, account.getAge());
 
-    var accountDto = AccountDto.builder().name("NewName").age(32).build();
+    var accountDto = AccountDto.builder().id(account.getId()).name("NewName").age(32).build();
     var updatedAccount = accountService.updateAccount(accountDto);
     var accountFromDB = accountService.getAccountById(account.getId());
     assertEquals(updatedAccount.getName(), accountFromDB.getName());

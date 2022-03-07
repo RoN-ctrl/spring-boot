@@ -13,6 +13,18 @@ public class AccountController {
 
     private final AccountService accountService;
 
+    /**
+     * body example
+     *
+       {
+         "login": "user",
+         "password": "password",
+         "name": "postman",
+         "age": 25,
+         "role": "USER"
+       }
+     *
+     */
     @PostMapping
     public Account save(@RequestBody AccountDto accountDto){
         return accountService.saveAccount(accountDto);
@@ -23,6 +35,19 @@ public class AccountController {
         return accountService.getAccountById(id);
     }
 
+  /**
+   * body example
+   *
+     {
+       "id": 1,
+       "login": "user",
+       "password": "password",
+       "name": "postman",
+       "age": 25,
+       "role": "USER"
+     }
+   *
+   */
     @PutMapping
     public Account update(@RequestBody AccountDto accountDto) {
         return accountService.updateAccount(accountDto);

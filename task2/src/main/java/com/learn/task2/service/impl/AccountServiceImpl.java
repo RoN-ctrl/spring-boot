@@ -27,8 +27,11 @@ public class AccountServiceImpl implements AccountService {
   @Override
   public Account updateAccount(AccountDto accountDto) {
     Account account = getAccountById(accountDto.getId());
-    account.setName(account.getName());
-    account.setAge(account.getAge());
+    account.setLogin(accountDto.getLogin());
+    account.setPassword(accountDto.getPassword());
+    account.setName(accountDto.getName());
+    account.setAge(accountDto.getAge());
+    account.setRole(accountDto.getRole());
     return accountRepository.save(account);
   }
 
@@ -43,8 +46,11 @@ public class AccountServiceImpl implements AccountService {
 
   private Account mapDtoToAccount(AccountDto accountDto) {
     return Account.builder()
-            .name(accountDto.getName())
-            .age(accountDto.getAge())
-            .build();
+        .login(accountDto.getLogin())
+        .password(accountDto.getPassword())
+        .name(accountDto.getName())
+        .age(accountDto.getAge())
+        .role(accountDto.getRole())
+        .build();
   }
 }

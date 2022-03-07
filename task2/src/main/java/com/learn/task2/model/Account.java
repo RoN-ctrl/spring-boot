@@ -26,8 +26,11 @@ public class Account {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long id;
+  private String login;
+  private String password;
   private String name;
   private int age;
+  private String role;
 
   @Override
   public boolean equals(Object o) {
@@ -38,11 +41,12 @@ public class Account {
       return false;
     }
     Account account = (Account) o;
-    return id == account.id && age == account.age && Objects.equals(name, account.name);
+    return id == account.id && age == account.age && Objects.equals(name, account.name)
+        && Objects.equals(role, account.role) && Objects.equals(login, account.login);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, age);
+    return Objects.hash(id, name, age, role, login);
   }
 }
